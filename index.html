@@ -57,12 +57,26 @@
       }
     });
 
+    var Main = React.createClass({
+      render: function(){
+        return(
+          <div className="container">
+            <div className="row">
+              Main Content
+            </div>
+          </div>
+
+        )
+      }
+    });
+
     var App = React.createClass({
       render: function(){
         return(
           <div>
             <Navbar />
             <Jumbotron />
+            <Main />
           </div>
         )
       }
