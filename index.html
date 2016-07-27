@@ -43,8 +43,16 @@
       }
     });
 
+    var App = React.createClass({
+      render: function(){
+        return(
+          <Navbar />
+        )
+      }
+    });
+
     ReactDOM.render(
-      <Navbar />,
+      <App />,
       document.getElementById('app')
     );
   </script>
