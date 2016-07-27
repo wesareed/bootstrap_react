@@ -70,6 +70,20 @@
       }
     });
 
+    var Footer = React.createClass({
+      render: function(){
+        return(
+          <div className="container">
+            <hr/>
+            <footer>
+              <p>&copy; 2016 My Website, Inc.</p>
+            </footer>
+          </div>
+
+        )
+      }
+    });
+
     var App = React.createClass({
       render: function(){
         return(
@@ -77,6 +91,7 @@
             <Navbar />
             <Jumbotron />
             <Main />
+            <Footer />
           </div>
         )
       }
