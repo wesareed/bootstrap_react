@@ -52,13 +52,25 @@
     });
 
     var Jumbotron = React.createClass({
+      propTypes: {
+        heading: React.PropTypes.string.isRequired,
+        text: React.PropTypes.string.isRequired,
+        link: React.PropTypes.string.isRequired
+      },
+      getDefaultProps: function(){
+        return {
+          heading: 'Welcome!',
+          text: 'Welcome to this awesome new site built with React! I love React!',
+          link: 'https://facebook.github.io/react/'
+        }
+      },
       render: function(){
         return(
           <div className="jumbotron">
             <div className="container">
-              <h1>Hello, world!</h1>
-              <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-              <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+              <h1>{this.props.heading}</h1>
+              <p>{this.props.text}</p>
+              <p><a className="btn btn-primary btn-lg" target="_blank" href={this.props.link} role="button">Learn more &raquo;</a></p>
             </div>
           </div>
         )
