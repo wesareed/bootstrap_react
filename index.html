@@ -91,12 +91,20 @@
     });
 
     var Footer = React.createClass({
+      propTypes: {
+        footer: React.PropTypes.string.isRequired
+      },
+      getDefaultProps: function(){
+        return {
+          footer: '2016 My Website, Inc'
+        }
+      },
       render: function(){
         return(
           <div className="container">
             <hr/>
             <footer>
-              <p>&copy; 2016 My Website, Inc.</p>
+              <p> &copy; {this.props.footer}</p>
             </footer>
           </div>
 
