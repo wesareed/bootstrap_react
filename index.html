@@ -20,13 +20,19 @@
       },
       getDefaultProps: function(){
         return{
-          brand: 'My Website'
+          brand: 'My Website',
+          color: 'light'
         }
       },
       render: function(){
+        if(this.props.color == 'dark'){
+          var navClass = 'navbar navbar-inverse';
+        } else {
+          var navClass = 'navbar navbar-default';
+        }
         return(
           <div>
-          <nav className="navbar navbar-default">
+          <nav className={navClass}>
             <div className="container-fluid">
               <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -116,7 +122,7 @@
       render: function(){
         return(
           <div>
-            <Navbar />
+            <Navbar color="dark"/>
             <Jumbotron />
             <Main />
             <Footer />
