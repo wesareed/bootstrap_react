@@ -15,6 +15,9 @@
 
   <script type="text/babel">
     var Navbar = React.createClass({
+      propTypes: {
+        brand: React.PropTypes.string.isRequired
+      },
       getDefaultProps: function(){
         return{
           brand: 'My Website'
