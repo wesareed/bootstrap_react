@@ -46,8 +46,8 @@
 
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
+                  <li><a onClick={this.props.homeClick} href="#">Home</a></li>
+                  <li><a onClick={this.props.aboutClick} href="#">About</a></li>
                 </ul>
               </div>
             </div>
@@ -119,10 +119,17 @@
     });
 
     var App = React.createClass({
+      handlehomeClick: function(){
+        this.setstate({
+          page: 'home'
+        })
+      },
       render: function(){
         return(
           <div>
-            <Navbar color="dark"/>
+            <Navbar color="dark"
+                    homeClick={this.handlehomeClick}
+                    aboutClick={this.handleaboutClick}/>
             <Jumbotron />
             <Main />
             <Footer />
