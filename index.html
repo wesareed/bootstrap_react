@@ -119,6 +119,11 @@
     });
 
     var App = React.createClass({
+      getInitialState: function(){
+        return {
+          page: 'home'
+        }
+      },
       handleHomeClick: function(){
         this.setstate({
           page: 'home'
