@@ -119,17 +119,22 @@
     });
 
     var App = React.createClass({
-      handlehomeClick: function(){
+      handleHomeClick: function(){
         this.setstate({
           page: 'home'
+        })
+      },
+      handleAboutClick: function(){
+        this.setstate({
+          page: 'about'
         })
       },
       render: function(){
         return(
           <div>
             <Navbar color="dark"
-                    homeClick={this.handlehomeClick}
-                    aboutClick={this.handleaboutClick}/>
+                    homeClick={this.handleHomeClick}
+                    aboutClick={this.handleAboutClick}/>
             <Jumbotron />
             <Main />
             <Footer />
