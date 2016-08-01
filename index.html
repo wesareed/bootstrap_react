@@ -30,6 +30,15 @@
         } else {
           var navClass = 'navbar navbar-default';
         }
+
+        var homeActive = '';
+        var aboutActive = '';
+
+        if(this.props.page == 'home'){
+          homeActive = 'active';
+        }else if (this.props.page == 'about') {
+          aboutActive = 'active';
+        }
         return(
           <div>
           <nav className={navClass}>
@@ -46,8 +55,8 @@
 
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
-                  <li><a onClick={this.props.homeClick} href="#">Home</a></li>
-                  <li><a onClick={this.props.aboutClick} href="#">About</a></li>
+                  <li className={homeActive}><a onClick={this.props.homeClick} href="#">Home</a></li>
+                  <li className={aboutActive}><a onClick={this.props.aboutClick} href="#">About</a></li>
                 </ul>
               </div>
             </div>
@@ -138,6 +147,7 @@
         return(
           <div>
             <Navbar color="dark"
+                    page={this.state.page}
                     homeClick={this.handleHomeClick}
                     aboutClick={this.handleAboutClick}/>
             <Jumbotron />
